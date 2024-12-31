@@ -1,4 +1,4 @@
-# https://henghuiding.github.io/MeViS/
+# https://henghuiding.github.io/SynFMC/
 
 ```latex
 @article{SynFMC,
