@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="author" href="https://henghuiding.github.io/SynFMC">
+  <title>SynFMC
+  </title>
+  <meta name="description" content="Free-Form Motion Control: A Synthetic Video Generation Dataset">
+  <meta name="keywords"
+    content="FMC; Xincheng Shuai; Henghui Ding; Fudan University; Motion Control; Camera Control; Video Generation; Dataset; Simulation">
+
+  <meta name="description"
+    content="Free-Form Motion Control: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions">
+  <meta property="og:title"
+    content="Free-Form Motion Control: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions" />
+  <meta property="og:description"
+    content="Free-Form Motion Control: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions" />
+
+  <meta name="twitter:title"
+    content="Free-Form Motion Control: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions">
+  <meta name="twitter:description"
+    content="Free-Form Motion Control: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <meta name="google-site-verification" content="RHqlM-yRssUYgbykhtd0uguPnqkhTvwJw-aLE04B4KQ" />
+
+
+  <style>
+    body {
+      min-width: 420px;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .image-pairs-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      justify-content: center;
+
+    }
+
+
+    .pair {
+      display: flex;
+      flex-direction: column;
+
+      flex-shrink: 0;
+
+      width: 175px;
+
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .pair h5 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+      white-space: pre-wrap;
+    }
+
+    .pair img {
+      width: 200px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 420px) {
+      .image-pairs-container {
+        overflow-x: auto;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Free-Form Motion Control: A Synthetic Video Generation Dataset with
+              Controllable Camera and Object Motions
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/xinchengshuai?tab=repositories" target="_blank">Xincheng
+                  Shuai</a><sup>1</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="https://henghuiding.github.io/" target="_blank">Henghui Ding</a><sup>1</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="">Zhenyuan Qin</a><sup>1</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="">Hao Luo</a><sup>2</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="">Xingjun Ma</a><sup>1</sup>,&nbsp;</span>
+              <span class="author-block">
+                <a href="">Dacheng Tao</a><sup>3</sup>,&nbsp;</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>Fudan University&nbsp;&nbsp;&nbsp;&nbsp;
+                <sup>2</sup>Alibaba&nbsp;&nbsp;&nbsp;&nbsp;
+                <sup>3</sup>Nanyang Technological University&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv'25 PDF</span>
+                  </a>
+                </span>
+
+
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span>🔥Code (coming soon)</span>
+                  </a>
+
+                </span>
+
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span>🔥Dataset (coming soon)</span>
+                  </a>
+
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <center><img src="static/DemoImages/teaser.svg" border="0" width="100%"></center>
+
+        <div align="center">
+          <p style="text-align:justify; text-justify:inter-ideograph;width:100%">Figure 1. Generation pipeline of videos
+            in the proposed <b>Syn</b>thetic Dataset
+            for <b>F</b>ree-Form <b>M</b>otion <b>C</b>ontrol (<b>SynFMC</b>). The figure presents an example for
+            generating synthetic video with three objects:
+            (1) First, the HDRI environment map and objects matching the environment are selected as the assets.
+            (2) Then, the motion types of objects and camera are selected for trajectory generation.
+            (3) The center region shows the resulting 3D animation sequence used for rendering.
+            The rendered video and annotations are demonstrated in the last row.</p>
+        </div><br>
+
+      </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+              Controlling the movements of dynamic objects and the camera within generated videos is a meaningful yet
+              challenging task.
+              Due to the lack of datasets with comprehensive motion annotations, existing algorithms can not
+              simultaneously control the motions of both camera and objects,
+              resulting in limited controllability over generated contents. To address this issue and facilitate the
+              research in this field,
+              we introduce a <b>Syn</b>thetic Dataset for <b>F</b>ree-Form <b>M</b>otion
+              <b>C</b>ontrol (<b>SynFMC</b>). The proposed <b>SynFMC</b> dataset includes diverse
+              objects and environments and covers various motion patterns according to specific rules, simulating
+              common
+              and complex real-world scenarios. The complete 6D pose information facilitates models learning to
+              disentangle the motion effects from objects and the camera in a video. To validate the effectiveness and
+              generalization of <b>SynFMC</b>, we further propose a method, <b>F</b>ree-Form <b>M</b>otion
+              <b>C</b>ontrol (<b>FMC</b>).
+              <b>FMC</b> enables independent or simultaneous control of object and camera movements, producing
+              high-fidelity videos. Moreover, it is compatible with various personalized text-to-image (T2I) models
+              for
+              different content styles. Extensive experiments demonstrate that the proposed FMC outperforms previous
+              methods across multiple scenarios.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="SynFMC-Visualization">
+    <div class="container is-max-desktop content">
+      <h2 class="title">1. Visualization of SynFMC </h2>
+      <h3 class="title">Environment Categories</h3>
+      <b> ⭐ The environments in SynFMC span five types: <i>ground</i>, <i>near ground</i>, <i>sky</i>, <i>water
+          surface</i>, and <i>underwater</i>, </b>
+
+
+      <div class="image-pairs-container">
+        <div class="pair">
+          <h5><b>Ground</b></h5>
+          <img src="static\DemoImages\webp\synfmc\ground_1.webp" alt="0442a954" width="224" height="126" />
+          <img src="static\DemoImages\webp\synfmc\ground_2.webp" alt="d321dde4" width="224" height="126" />
+        </div>
+        <div class="pair">
+          <h5><b>Near Ground</b></h5>
+          <img src="static\DemoImages\webp\synfmc\near_ground_1.webp" alt="02221fb0" width="224" height="126" />
+          <img src="static\DemoImages\webp\synfmc\near_ground_2.webp" alt="bbe97d18" width="224" height="126" />
+        </div>
+
+        <div class="pair">
+          <h5><b>Sky</b></h5>
+          <img src="static\DemoImages\webp\synfmc\sky_1.webp" alt="002b4dce" width="224" height="126" />
+          <img src="static\DemoImages\webp\synfmc\sky_2.webp" alt="26ed56e6" width="224" height="126" />
+        </div>
+        <div class="pair">
+          <h5><b>Water Surface</b></h5>
+          <img src="static\DemoImages\webp\synfmc\water_surface_1.webp" alt="c791ddbb" width="224" height="126" />
+          <img src="static\DemoImages\webp\synfmc\water_surface_2.webp" alt="e5e9eb29" width="224" height="126" />
+        </div>
+        <div class="pair">
+          <h5><b>Underwater</b></h5>
+          <img src="static\DemoImages\webp\synfmc\underwater_1.webp" alt="c791ddbb" width="224" height="126" />
+          <img src="static\DemoImages\webp\synfmc\underwater_2.webp" alt="e5e9eb29" width="224" height="126" />
+        </div>
+      </div>
+
+      <br><br>
+
+
+      <h3 class="title">Scene Categories</h3>
+      <b> ⭐ SynFMC contains 26K videos divided into four groups: 6K <i>static single-object</i>, 6K <i>static
+          multi-object</i>, 8K <i>dynamic single-object</i>, and 6K <i>dynamic multi-object</i>. <i>Static</i> means
+        fixed object locations in world space while the camera remains movable. </b>
+
+
+      <div class="image-pairs-container">
+        <div class="pair">
+          <h5><b>Static Single-Object</b></h5>
+          <img src="static\DemoImages\webp\synfmc\single-static.webp" alt="26ed56e6" width="224" height="126" />
+        </div>
+        <div class="pair">
+          <h5><b>Dynamic Single-Object</b></h5>
+          <img src="static\DemoImages\webp\synfmc\single-dynamic.webp" alt="c791ddbb" width="224" height="126" />
+        </div>
+
+        <div class="pair">
+          <h5><b>Static Multi-Object</b></h5>
+          <img src="static\DemoImages\webp\synfmc\multi-static.webp" alt="e5e9eb29" width="224" height="126" />
+        </div>
+        <div class="pair">
+          <h5><b>Dynamic Multi-Object</b></h5>
+          <img src="static\DemoImages\webp\synfmc\multi-dynamic.webp" alt="c791ddbb" width="224" height="126" />
+        </div>
+      </div>
+  <!-- </section> -->
+
+  <br><br>
+
+  <!-- <section class="section" id="SynFMC_Annotation"> -->
+    <div class="container is-max-desktop content">
+      <h3 class="title">Auxiliary Annotation of SynFMC</h3>
+      <b>⭐ Besides 6D poses of objects and the camera, SynFMC also provides auxiliary annotations, including instance
+        segmentation maps, depth maps, and descriptions of both visual content and motion. </b>
+      <center>
+        <img src="static/DemoImages/anno_video.svg" alt="0442a954" />
+
+      </center>
+      <center>
+        <div align="center">
+          <!-- <p style="text-align:justify; text-justify:inter-ideograph;width:100%">Figure 3. An example of auxiliary -->
+            <!-- annotations in SynFMC.</p> -->
+        </div><br>
+      </center>
+    </div>
+  </section>
+
+
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <h2 class="title">2. Architecture of FMC</h2>
+      <b>⭐ The following figure presents the architecture of FMC, where the Object Motion Controller (OMC) perceives
+        the orientation
+        and size of objects in the camera coordinate
+        system by accepting 6D poses.</b>
+      <div class="hero-body">
+        <center><img src="static/DemoImages/network.svg" border="0" width="100%"></center>
+
+        <div align="center">
+          <p style="text-align:justify; text-justify:inter-ideograph;width:100%">Figure 2. The architecture of
+            <b>FMC</b>.
+            In the first stage, we randomly sample the images from synthetic videos and update the parameters from
+            injected <b>Domain Adapter</b>.
+            Next, the modules from Camera Motion Controller (<b>CMC</b>) are learned. It consists of two parts:
+            <b>Camera Encoder</b> and <b>Camera Adapter</b>,
+            where the Camera Adapter is introduced into the temporal modules. Finally, we train the <b>Object
+              Encoder</b> from Object Motion Controller (<b>OMC</b>).
+            It receives the object pose features, which are repeated in the corresponding object region.
+            We use Gaussian blur kernel centered at the centroid to prevent the need of precise masks.
+            Then, the output is multiplied by the coarse masks to modulate the features in the main branch.
+          </p>
+        </div>
+      </div>
+
+  </section>
+
+
+  <section class="section" id="Camera_Control">
+    <div class="container is-max-desktop content">
+      <h2 class="title">3. Results of FMC</h2>
+      <h3 class="title">Independent Control of Camera / Object</h3>
+      <b>⭐ The first/last two examples are the results from independent control of camera/object.</b>
+      <center>
+        <div style="display: inline-block;">
+          <div class="image-pairs-container">
+            <div class="pair">
+              <h5>canyon rim with a view of red rocks</h5>
+              <img src="static\DemoImages\condition_picture\cam_only\red_mountain.png" alt="02221fb0" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_only\3.webp" alt="02221fb0" width="224" height="126" />
+            </div>
+            <div class="pair">
+              <h5>cactus in the garden</h5>
+              <img src="static\DemoImages\condition_picture\cam_only\cactus.png" alt="002b4dce" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_only\5.webp" alt="002b4dce" width="224" height="126" />
+            </div>
+          </div>
+        </div>
+        <div style="display: inline-block;">
+          <div class="image-pairs-container">
+            <div class="pair">
+              <h5>a <span style="color: red;">balloon</span> floating over the road</h5>
+              <img src="static\DemoImages\condition_picture\obj_only\ballon.png" alt="bbe97d18" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\obj_only\5.webp" alt="bbe97d18" width="224" height="126" />
+            </div>
+            <div class="pair">
+              <h5>a <span style="color: red;">butterfly</span> flying over the ground </h5>
+              <img src="static\DemoImages\condition_picture\obj_only\butterfly.png" alt="bbe97d18" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\obj_only\4.webp" alt="bbe97d18" width="224" height="126" />
+            </div>
+
+          </div>
+        </div>
+      </center>
+    </div>
+  </section>
+
+
+  <section class="section" id="Camera_Object_Control">
+    <div class="container is-max-desktop content">
+      <h3 class="title">Simultaneous Control of Camera & Object</h3>
+      <b>⭐ The first/last two examples are results from <i> static </i>/<i> dynamic single-object</i> scene:</b>
+      <br>
+      <center>
+        <div style="display: inline-block;">
+          <div class="image-pairs-container">
+            <div class="pair">
+              <h5>a <span style="color: red;">yellow mushroom</span> on the road</h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\single_static\mushroom.png" alt="0442a954"
+                width="224" height="126" />
+              <img src="static\DemoImages\webp\cam_obj\single_static3.webp" alt="0442a954" width="224" height="126" />
+            </div>
+            <div class="pair">
+              <h5>a <span style="color: red;">cat</span> in the grass covered with leaves</h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\single_static\cat.png" alt="0442a954" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_obj\single_static5.webp" alt="0442a954" width="224" height="126" />
+            </div>
+          </div>
+        </div>
+        <div style="display: inline-block;">
+          <div class="image-pairs-container">
+            <div class="pair">
+              <h5>a <span style="color: red;">butterfly</span> is flying over the ground</h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\single_dynamic\butterfly.png" alt="0442a954"
+                width="224" height="126" />
+              <img src="static\DemoImages\webp\cam_obj\single_dynamic3.webp" alt="0442a954" width="224" height="126" />
+            </div>
+            <div class="pair">
+              <h5>a <span style="color: red;">balloon</span> floating in the cloudy sky
+              </h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\single_dynamic\ballon.png" alt="0442a954"
+                width="224" height="126" />
+              <img src="static\DemoImages\webp\cam_obj\single_dynamic8.webp" alt="0442a954" width="224" height="126" />
+            </div>
+          </div>
+        </div>
+      </center>
+      <br>
+      <br>
+      <br>
+
+      <b>⭐ The first/last two examples are results from <i> static </i>/<i> dynamic multi-object</i> scene:</b>
+      <center>
+        <div style="display: inline-block;">
+          <div class="image-pairs-container">
+            <div class="pair">
+              <h5>a <span style="color: red;">deer</span> and a <span style="color: blue;">man</span> in the grass
+
+              </h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\multi_static\deer.png" alt="0442a954" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_obj\multi_static3.webp" alt="0442a954" width="224" height="126" />
+            </div>
+            <div class="pair">
+              <h5><span style="color: red;">two</span> <span style="color: blue;">birds</span> in meadow
+
+              </h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\multi_static\bird.png" alt="0442a954" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_obj\multi_static1.webp" alt="0442a954" width="224" height="126" />
+            </div>
+
+          </div>
+        </div>
+
+        <div style="display: inline-block;">
+          <div class="image-pairs-container">
+            <div class="pair">
+              <h5><span style="color: red;">two</span> <span style="color: blue;">UFOs</span> are flying over the city
+
+              </h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\multi_dynamic\UFO.png" alt="0442a954" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_obj\multi_dynamic1.webp" alt="0442a954" width="224" height="126" />
+            </div>
+
+            <div class="pair">
+              <h5 style="white-space: normal;">a <span style="color: red;">shark</span> and a <span
+                  style="color: blue;">yellow
+                  fish</span> are
+                swimming in the sea</h5>
+              <img src="static\DemoImages\condition_picture\cam_obj\multi_dynamic\shark.png" alt="0442a954" width="224"
+                height="126" />
+              <img src="static\DemoImages\webp\cam_obj\multi_dynamic3.webp" alt="0442a954" width="224" height="126" />
+            </div>
+
+          </div>
+        </div>
+      </center>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      Please consider to cite SynFMC if it helps your research.
+      <pre><code>@article{SynFMC,
+        title={{Free-Form Motion Control}: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions},
+        author={Shuai, Xincheng and Ding, Henghui and Qin, Zhenyuan and Luo, Hao and Ma, Xingjun and Tao, Dacheng},
+        journal={arXiv},
+        year={2025}
+      }</code></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+  <a href="https://clustrmaps.com/site/1c3k5" title="ClustrMaps" target="_blank"><img
+      src="////www.clustrmaps.com/map_v2.png?d=ai6sNutd70XB2zjGa-jNQk3DQ2Tvb30dxYdRgTfr5K4&cl=ffffff" height="1" width="1"
+      / style="display:block;margin-top:5px;margin-bottom:0px;margin-left:auto;text-align:right"></a>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              <center>
+                <font size=2>© Xincheng Shuai | Last updated: 01/01/2025</font>
+              </center>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
