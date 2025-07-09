@@ -1,0 +1,167 @@
+
+output_dir: "output/camctrl_model"
+pretrained_model_path: "[path to the weights of sd1.5]"
+unet_subfolder: "unet"
+lora_ckpt: "[path to the weights of lora from stage 1]"
+
+train_data:
+  target: fmc.data.dataset.UnrealTrajVideoDataset 
+  params:
+    data_root: "[path to the Synfmc video data root]"
+    lable_root: "[path to the Synfmc label data root]"
+    mask_root: "[path to the Synfmc mask data root]"
+    seq_csv_root: "[path to the Synfmc trajectories meta data root]"
+    hdri_json_file_path: "[path to the Synfmc environment meta data file]"
+    asset_json_file_path: "[path to the Synfmc object meta data file]"
+    single_static_num: 0
+    single_dynamic_num: 120
+    multi_static_num: 0
+    multi_dynamic_num: 0
+
+    sample_size: [256, 384]
+    # sample_size: [512, 768]
+    sample_n_frames: 16
+    ori_fps: 16
+    time_duration: 4
+    tgt_fps_list: [16,15,14,13,12,11,10,9,8,7,6,5,4]
+    # allow_change_tgt: True
+    allow_change_tgt: False
+    # is_image: True
+    # use_flip: True
+    use_flip: False
+    cam_translation_rescale_factor: 1200 #1200
+    obj_translation_rescale_factor: 1000 #1000
+    use_sphere_mask: False
+
+  sample_size: [256, 384]
+  # sample_size: [512, 768]
+  sample_n_frames: 16
+
+
+
+validation_data:
+  image_prompts:
+    - "the shark floats"
+    - "The image is synthetic. the shark floats"
+    # - "a rhinoceros is idling"
+    # - "it is synthetic image. a rhinoceros is idling"
+  prompts:
+    - "a pink character move on ground"
+    - "a girl is walking"
+    - "Snow rocky mountains peaks canyon. Snow blanketed rocky mountains surround and shadow deep canyons."
+    - "A drone view of celebration with Christma tree and fireworks, starry sky - background."
+    - "Robot dancing in times square."
+    - "Pacific coast, carmel by the sea ocean and waves."
+
+  num_inference_steps: 25
+  guidance_scale: 8.
+  num: 2
+  # max_obj_num: 3,
+
+  data_root: "[path to the Synfmc video data root]"
+  lable_root: "[path to the Synfmc label data root]"
+  mask_root: "[path to the Synfmc mask data root]"
+  seq_csv_root: "[path to the Synfmc trajectories meta data root]"
+  hdri_json_file_path: "[path to the Synfmc environment meta data file]"
+  asset_json_file_path: "[path to the Synfmc object meta data file]"
+
+  cam_translation_rescale_factor: 1200 #1200
+  obj_translation_rescale_factor: 1000 #1000
+  allow_change_tgt: False
+  ori_fps: 16 
+  time_duration: 4 
+  tgt_fps_list: [16,15,14,13,12,11,10,9,8,7,6,5,4]
+
+  seq_id_max_map:
+    single_static: 0
+    single_dynamic: 120
+    multi_static: 0
+    multi_dynamic: 0
+
+
+  image_sample_size: [256, 384]
+  sample_size: [256, 384]
+
+  change_obj_back: false
+
+unet_additional_kwargs:
+  use_motion_module              : true
+  motion_module_resolutions      : [ 1,2,4,8 ]
+  unet_use_cross_frame_attention : false
+  unet_use_temporal_attention    : false
+  motion_module_mid_block: false
+  motion_module_type: Vanilla
+  motion_module_kwargs:
+    num_attention_heads                : 8
+    num_transformer_block              : 1
+    attention_block_types              : [ "Temporal_Self", "Temporal_Self" ]
+    temporal_position_encoding         : true
+    temporal_position_encoding_max_len : 32
+    temporal_attention_dim_div         : 1
+    zero_initialize                    : false
+
+lora_rank: 2
+lora_scale: 1.0
+
+motion_module_ckpt: "[path to the weights of AnimateDiffv3]"
+
+pose_encoder_kwargs:
+  downscale_factor: 8
+  channels: [320, 640, 1280, 1280]
+  nums_rb: 2
+  cin: 384
+  ksize: 1
+  sk: true
+  use_conv: false
+  compression_factor: 1
+  temporal_attention_nhead: 8
+  attention_block_types: ["Temporal_Self", ]
+  temporal_position_encoding: true
+  temporal_position_encoding_max_len: 16
+attention_processor_kwargs:
+  add_spatial: false
+  spatial_attn_names: 'attn1'
+  add_temporal: true
+  temporal_attn_names: '0'
+  pose_feature_dimensions: [320, 640, 1280, 1280]
+  query_condition: true
+  key_value_condition: true
+  scale: 1.0
+noise_scheduler_kwargs:
+  num_train_timesteps: 1000
+  beta_start:          0.00085
+  beta_end:            0.012
+  beta_schedule:       "linear"
+  steps_offset:        1
+  clip_sample:         false
+
+do_sanity_check: true
+
+max_train_epoch:      -1
+
+max_train_steps:      50000
+validation_steps:       200
+validation_steps_tuple: [100 ]
+
+learning_rate:    1.e-4
+
+num_workers: 8
+train_batch_size: 1
+checkpointing_epochs: -1
+checkpointing_steps:  10000
+
+mixed_precision_training: true
+global_seed: 45
+logger_interval: 10
+
+
+
+apply_masked_loss: true
+mask_loss_weight: 1
+sd_loss_weight: 0.6
+
+appearance_debias: 0
+
+
+
+train_unet: false

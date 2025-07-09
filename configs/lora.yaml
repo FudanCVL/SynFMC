@@ -1,0 +1,72 @@
+output_dir: "output/image_lora"
+pretrained_model_path: "[path to the weights of sd1.5]"
+unet_subfolder: "unet"
+
+train_data:
+  target: fmc.data.dataset.UnrealTrajLoraDataset
+  params:
+    data_root: "[path to the Synfmc video data root]"
+    lable_root: "[path to the Synfmc label data root]"
+    mask_root: "[path to the Synfmc mask data root]"
+    seq_csv_root: "[path to the Synfmc trajectories meta data root]"
+    hdri_json_file_path: "[path to the Synfmc environment meta data file]"
+    asset_json_file_path: "[path to the Synfmc object meta data file]"
+
+    single_static_num: 0
+    single_dynamic_num: 120
+    multi_static_num: 0
+    multi_dynamic_num: 0
+
+    sample_size: [256,384]
+    is_image: True
+    # use_flip: True
+    use_flip: False
+  
+  # sample_size: [512, 768]
+  sample_size: [256,384]
+
+validation_data:
+  prompts:
+    - "the shark floats"
+    - "The image is synthetic. the shark floats"
+    - "a rhinoceros is idling"
+    - "it is synthetic image. a rhinoceros is idling"
+    - "In the road, a cat runs, and the wolfman is jumping"
+    - "This image is rendered. In the road, a cat runs, and the wolfman is jumping"
+    - "the spider-man stands in the playground and a girl is running"
+    - "The image is synthetic. the spider-man stands in the playground and a dog is running"
+    
+  num_inference_steps: 25
+  guidance_scale: 8.
+  num: 4
+  max_obj_num: 3
+
+noise_scheduler_kwargs:
+  num_train_timesteps: 1000
+  beta_start: 0.00085
+  beta_end: 0.012
+  beta_schedule: "scaled_linear"
+  steps_offset: 1
+  clip_sample: false
+
+do_sanity_check:      true
+max_train_epoch:      -1
+max_train_steps:      8000
+validation_steps:       100
+validation_steps_tuple: [2,]
+
+learning_rate:    1.e-4
+
+lora_rank: 2
+
+num_workers: 8
+train_batch_size: 16
+
+checkpointing_epochs: -1
+checkpointing_steps:  2000
+
+mixed_precision_training: true
+enable_xformers_memory_efficient_attention: false
+
+global_seed: 42
+logger_interval: 10
