@@ -1,0 +1,30 @@
+name: fmc
+channels:
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - pytorch=1.13.1
+  - torchvision=0.14.1
+  - torchaudio=0.13.1
+  - pytorch-cuda=11.7
+  - pip
+  - pip:
+    - diffusers==0.24.0
+    - transformers==4.45.1
+    - xformers==0.0.16
+    - imageio==2.27.0
+    - imageio[ffmpeg]
+    - opencv-python
+    - huggingface_hub==0.25.1
+    - gdown
+    - einops
+    - decord
+    - omegaconf
+    - safetensors
+    - numpy==1.26.4
+    - gradio
+    - wandb
+    - triton
+    - termcolor
+    - nltk

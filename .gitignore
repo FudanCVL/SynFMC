@@ -1,0 +1,6 @@
+**/__pycache__/
+.vscode
+output
+meta_files
+*.txt
+configs_ord
