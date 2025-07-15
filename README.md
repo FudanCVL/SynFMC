@@ -1,6 +1,6 @@
 
 <p align="center">
-  <h2 align="center"> <img src='assets/logo.jpg' alt="CreatiDesign Logo" width='24px' />Free-Form Motion Control: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions</h2>
+  <h2 align="center"> <img src='assets/logo.jpg' width='24px' />Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation</h2>
   <p align="center">
     <a href=https://github.com/xinchengshuai/><strong>Xincheng Shuai</strong></a><sup>1</sup>
     ·
@@ -79,6 +79,7 @@ bash dist_run_obj.bash
 ## 📋 TODO List
 - [x] Upload training code of FMC.
 - [ ] Upload SynFMC dataset (in progress).
+- [ ] Upload the code of SynFMC.
 - [ ] Upload inference code and model weights of FMC.
 
 ## ✒️ Citation
@@ -87,7 +88,7 @@ If you find our work useful for your research and applications, please kindly ci
 
 ```latex
 @inproceedings{SynFMC,
-        title={{Free-Form Motion Control}: A Synthetic Video Generation Dataset with Controllable Camera and Object Motions},
+        title={{Free-Form Motion Control}: Controlling the 6D Poses of Camera and Objects in Video Generation},
         author={Shuai, Xincheng and Ding, Henghui and Qin, Zhenyuan and Luo, Hao and Ma, Xingjun and Tao, Dacheng},
         booktitle={ICCV},
         year={2025}
