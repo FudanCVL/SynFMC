@@ -22,8 +22,8 @@
 <p align="center">
 <a href="https://arxiv.org/abs/2501.01425"><img src="https://img.shields.io/static/v1?label=Paper&message=2505.19114&color=red&logo=arxiv"></a>
 <a href="https://henghuiding.com/SynFMC/"><img src="https://img.shields.io/static/v1?label=Project%20Page&message=Github&color=blue&logo=github-pages"></a>
-<img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-ffbd45.svg" alt="HuggingFace">
-<img src="https://img.shields.io/badge/🤗_HuggingFace-Model-ffbd45.svg" alt="HuggingFace">
+<a href="https://huggingface.co/datasets/XinchengShuai/SynFMC"><img src="https://img.shields.io/badge/🤗_HuggingFace-Dataset-ffbd45.svg" alt="HuggingFace">
+<!-- <img src="https://img.shields.io/badge/🤗_HuggingFace-Model-ffbd45.svg" alt="HuggingFace"> -->
 </p>
 
 
@@ -76,11 +76,11 @@ bash dist_run_obj.bash
 
 <br>
 
-## 📋 TODO List
+<!-- ## 📋 TODO List
 - [x] Upload training code of FMC.
 - [ ] Upload SynFMC dataset (in progress).
 - [ ] Upload the code of SynFMC.
-- [ ] Upload inference code and model weights of FMC.
+- [ ] Upload inference code and model weights of FMC. -->
 
 ## ✒️ Citation
 
